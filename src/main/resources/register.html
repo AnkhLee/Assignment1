@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="/register" method="post">
+        <div>
+            <label for="email">email</label>
+            <input name="email" type="text">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input name="password" type="password">
+        </div>
+        <div>
+            <label for="fullName">fullName</label>
+            <input name="fullName" type="text">
+        </div>
+        <div>
+            <label for="screenName">screenName</label>
+            <input name="screenName" type="text">
+        </div>
+        <div>
+            <label for="dateOfBirth">dateOfBirth</label>
+            <input type="date" name="dateOfBirth">
+        </div>
+        <div>
+            <label for="gender">gender</label>
+            <select name="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+        </div>
+        <div>
+            <label for="status">Relationship Status</label>
+            <select name="status">
+                <option value="" selected>===Select One===</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="engaged">Engaged</option>
+                <option value="in_relationship">In Relationship</option>
+                <option value="separated">Separated</option>
+                <option value="widow">Widow</option>
+            </select>
+        </div>
+        <div>
+            <label for="location">Location</label>
+            <input type="text" name="location">
+        </div>
+        <div>
+            <label for="visibility">Visiblility Level</label>
+            <select name="visibility">
+                <option value="">===Select One===</option>
+                <option value="private">Private</option>
+                <option value="friends-only">Friends Only</option>
+                <option value="everyone">Eeveryone</option>
+            </select>
+        </div>
+        <button type="submit">Register</button>
+        </form>
+</body>
+</html>

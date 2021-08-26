@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body class="text-center">
+    <form action="/login" method="post">
+        <label for="email">Email</label>
+        <input type="text" name="email">
+        <label for="password">password</label>
+        <input type="password" name="password">
+        <button type="submit">Log in</button>
+    </form>
+    <a href="/register">new one?</a>
+</body>
+
+</html>

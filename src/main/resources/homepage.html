@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HomePage</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <scan id="email" hidden th:text="${session.currentMemberEmail}"></scan>
+    <input type="datetime-local" id="postTimeStamp">
+    <textarea id="body" cols="30" rows="10"></textarea>
+    <input type="button" value="New Post" id="new-post">
+    <script>
+        $("#new-post").bind("click",function(){
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var MM = today.getMonth()+1;
+            var dd = today.getDate();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+            var time = yyyy+"-"+MM+"-"+dd+"T"+hh+":"+mm+":"+ss;
+            $.ajax({
+                type:'POST',
+                url:'/newpost',
+                contentType:"application/json",
+                data:{
+                    "postTimeStamp":time,
+                    "body":$("#body").val(),
+                    "email":$("#email").text(),
+                },
+                dataType:"json",
+                success:function(data){
+                    alert(data.msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
